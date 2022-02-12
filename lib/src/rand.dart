@@ -41,7 +41,7 @@ abstract class Rand {
     return null;
   }
 
-  static T enumVal<T>(Iterable<T> values) {
+  static T element<T>(Iterable<T> values) {
     return values.elementAt(_rand.nextInt(values.length));
   }
 
@@ -54,26 +54,22 @@ abstract class Rand {
   }
 
   static String randomPassword({
+    int length = 16,
     bool withLowercase = true,
     bool withUppercase = true,
     bool withNumeric = true,
     bool withSpecial = true,
-    int length = 12,
   }) {
     const lowerCase = "abcdefghijklmnopqrstuvwxyz";
     const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const numeric = "0123456789";
-    const special = "@#=+!£\$%&?[](){}";
-
-    final String chars = () {
-      final buffer = StringBuffer();
-      if (withLowercase) buffer.write(lowerCase);
-      if (withUppercase) buffer.write(upperCase);
-      if (withNumeric) buffer.write(numeric);
-      if (withSpecial) buffer.write(special);
-      return buffer.toString();
-    }();
-
+    const special = "!@#\$%^&*()-_=+[]{}\\|;:'\",<.>/?`~";
+    final chars = (StringBuffer()
+          ..write(withLowercase ? lowerCase : '')
+          ..write(withUppercase ? upperCase : '')
+          ..write(withNumeric ? numeric : '')
+          ..write(withSpecial ? special : ''))
+        .toString();
     final buffer = StringBuffer();
     for (var i = 0; i < length; i++) {
       final value = math.Random.secure().nextInt(chars.length);
