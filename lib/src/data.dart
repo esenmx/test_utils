@@ -19,6 +19,6 @@ abstract class Data {
   /// [List] with size of [length] and filled random [int]s
   /// can have duplicates, if [max] is not provided [length] is [max]
   static List<int> randIntArray(int length, [int? max]) {
-    return List.generate(length, (index) => Rand.integer(max ?? length));
+    return List.generate(length, (index) => Random().nextInt(max ?? length));
   }
 }
