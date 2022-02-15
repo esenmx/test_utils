@@ -9,6 +9,6 @@ import 'package:mockito/mockito.dart';
 export 'package:flutter_test/flutter_test.dart';
 export 'package:mockito/mockito.dart';
 
-part 'src/data.dart';
+part 'src/generator.dart';
 part 'src/listener.dart';
 part 'src/widget.dart';
