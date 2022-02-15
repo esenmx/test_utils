@@ -27,17 +27,20 @@ abstract class Generator {
   }
 
   /// {0: true, 2: true, ... , ((length - 1) * 2): true};
-  static List<MapEntry<int, bool>> seqEvenEntries(int length) {
-    return seqEvenElements(length).map((e) => MapEntry(e, true)).toList();
+  static List<MapEntry<int, bool>> seqEvenEntries(int length,
+      [bool value = true]) {
+    return seqEvenElements(length).map((e) => MapEntry(e, value)).toList();
   }
 
   /// {1: true, 3: true, ... , (((length + 1) * 2) - 1): true};
-  static List<MapEntry<int, bool>> seqOddEntries(int length) {
-    return seqOddElements(length).map((e) => MapEntry(e, true)).toList();
+  static List<MapEntry<int, bool>> seqOddEntries(int length,
+      [bool value = true]) {
+    return seqOddElements(length).map((e) => MapEntry(e, value)).toList();
   }
 
   /// {Random().nextInt(): true, Random().nextInt(): true, ... , Random().nextInt(): true};
-  static List<MapEntry<int, bool>> randEntries(int length) {
-    return randElements(length).map((e) => MapEntry(e, true)).toList();
+  static List<MapEntry<int, bool>> randEntries(int length,
+      [bool value = true]) {
+    return randElements(length).map((e) => MapEntry(e, value)).toList();
   }
 }
