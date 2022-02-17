@@ -2,18 +2,18 @@ part of test_utils;
 
 abstract class Generator {
   /// [0, ... , length - 1]
-  static List<int> seqElements(int length, [int? value]) {
-    return List.generate(length, (index) => value ?? index);
+  static List<int> seqElements(int length, [int? offset]) {
+    return List.generate(length, (index) => index + (offset ?? 0));
   }
 
   /// [0, 2, 4, ... , (length - 1) * 2]
-  static List<int> seqEvenElements(int length, [int? value]) {
-    return List.generate(length, (index) => value ?? index * 2);
+  static List<int> seqEvenElements(int length, [int? offset]) {
+    return List.generate(length, (index) => index * 2 + (offset ?? 0));
   }
 
   /// [1, 3, 5, ... , ((length + 1) * 2) - 1]
-  static List<int> seqOddElements(int length, [int? value]) {
-    return List.generate(length, (index) => value ?? index * 2 + 1);
+  static List<int> seqOddElements(int length, [int? offset]) {
+    return List.generate(length, (index) => index * 2 + 1 + (offset ?? 0));
   }
 
   /// {Random().nextInt(), Random().nextInt(), ... , Random().nextInt()};
