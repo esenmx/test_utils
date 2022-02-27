@@ -1,7 +1,8 @@
 name: test_utils
 description: Commonly used test functions
-version: 0.0.1
-homepage: mehmetesen.com
+version: 1.0.0
+homepage: http://mehmetesen.com
+repository: https://github.com/esenmx/test_utils/
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
