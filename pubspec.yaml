@@ -5,12 +5,12 @@ homepage: http://mehmetesen.com
 repository: https://github.com/esenmx/test_utils/
 
 environment:
-  sdk: ">=2.17.0 <3.0.0"
+  sdk: ">=2.18.0 <4.0.0"
 
 dependencies:
-  mockito: ^5.2.0
+  mockito: ">=5.0.0 <6.0.0"
   test:
-  riverpod: 2.0.0-dev.9
+  riverpod: ">=2.0.0 <3.0.0"
 
 dev_dependencies:
-  lints: ">=2.0.0 <3.0.0"
+  lints: ">=2.0.0"
